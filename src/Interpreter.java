@@ -21,20 +21,7 @@ public class Interpreter extends JFrame{
         EnterB.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String input1 = /*"for(int i = 0; i < 4; i++){\n" +
-                "    x = 12;" +
-                "}";*/
-                /*"while(true){" +
-                "    x = 2;" +
-                "}";*/
-                //"if( x > -4 ){ x = -2; }";
-                "if( x > 10 ){ x = -2; }" +
-                        "else{ x = 10; }";
-
-                textArea.setText(input1);
-
                 String input = textArea.getText();
-                System.out.print(input);
 
                 Listener listener = new Listener();
                 GrammLexer lexer = new GrammLexer(new ANTLRInputStream(input));

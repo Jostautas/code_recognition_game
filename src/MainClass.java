@@ -189,6 +189,63 @@ public class MainClass extends PApplet {
             this.x = y;
         }
     }
+    public void drawWhileLess(int n, int x){
+        if(this.x < n){
+            this.x = x;
+        }
+    }
+    public void drawWhileMore(int n, int x){
+        if(this.x > n){
+            this.x = x;
+        }
+    }
+    public void drawDoWhileLess(int n, int x){
+        if(this.x < n){
+            this.x = x;
+            if(this.x >= n){
+                this.x = 0;
+                direction = 0;
+                funcNr = 0;
+            }
+        }
+    }
+    public void drawDoWhileMore(int n, int x){
+        if(this.x > n){
+            this.x = x;
+            if(this.x <= n){
+                this.x = 0;
+                direction = 0;
+                funcNr = 0;
+            }
+        }
+    }
+    public void reverse(){
+        if(direction != 0){
+            if(direction == 1)
+                direction = 2;
+            else{
+                direction = 1;
+            }
+            x = -x;
+            funcNr = 0;
+        }
+    }
+    public void goLeftX(int x){
+        this.x--;
+        if(this.x <= -x){
+            this.x = 0;
+            funcNr = 0;
+            direction = 0;
+        }
+    }
+    public void goRightX(int x){
+        this.x++;
+        if(this.x >= x){
+            this.x = 0;
+            funcNr = 0;
+            direction = 0;
+        }
+    }
 
     public void draw() {
         if(funcNr != 0){
@@ -211,6 +268,32 @@ public class MainClass extends PApplet {
                     break;
                 case 6:
                     drawIfMoreElse(Listener.n, Listener.newVal, Listener.newValElse);
+                    break;
+                case 7:
+                    drawWhileLess(Listener.n, Listener.newVal);
+                    break;
+                case 8:
+                    drawWhileMore(Listener.n, Listener.newVal);
+                    break;
+                case 9:
+                    drawDoWhileLess(Listener.n, Listener.newVal);
+                    break;
+                case 10:
+                    drawDoWhileMore(Listener.n, Listener.newVal);
+                    break;
+                case 11:
+                    funcNr = 0;
+                    direction = 0;
+                    x = 0;
+                    break;
+                case 12:
+                    reverse();
+                    break;
+                case 13:
+                    goLeftX(Listener.newVal);
+                    break;
+                case 14:
+                    goRightX(Listener.newVal);
                     break;
             }
         }
