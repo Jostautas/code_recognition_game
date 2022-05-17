@@ -1,0 +1,6 @@
+for(int i = 0; i < 4; i++){
+    x = 1;
+}
+while(true){
+    x = 2;
+}
