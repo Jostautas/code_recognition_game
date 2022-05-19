@@ -18,10 +18,10 @@ ifMore  : 'if(' 'x' '>' INT ')' '{' 'x' '=' INT ';' '}';
 ifLessElse  : 'if(' 'x' '<' INT ')' '{' 'x' '=' INT ';' '}' 'else{' 'x' '=' INT ';' '}';
 ifMoreElse  : 'if(' 'x' '>' INT ')' '{' 'x' '=' INT ';' '}' 'else{' 'x' '=' INT ';' '}';
 
-continue    : 'continue';
+continue    : 'continue;';
 
-doWhileLess : 'do{' 'x' '=' INT '}while(' 'x' '<' INT ')';
-doWhileMore : 'do{' 'x' '=' INT '}while(' 'x' '>' INT ')';
+doWhileLess : 'do{' 'x' '=' INT ';' '}while(' 'x' '<' INT ')';
+doWhileMore : 'do{' 'x' '=' INT ';' '}while(' 'x' '>' INT ')';
 
 //---------- pseudo code:
 

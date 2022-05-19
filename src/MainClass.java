@@ -13,9 +13,15 @@ import javax.swing.*;
 public class MainClass extends PApplet {
     public static void main(String[] args){
         PApplet.main("MainClass", args);
+
         JFrame frameInterp = new Interpreter();
         frameInterp.setVisible(true);
 
+        Server server = new Server();
+        server.startRunning();
+
+        Client client = new Client();
+        client.startRunning();
     }
 
     public static int x;    // movement of car based on input code
